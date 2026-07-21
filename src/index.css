@@ -2,9 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Base ────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────────
+   MONO — minimal monochrome light system.
+   Near-black on white, hairline borders, one green status accent.
+   See docs/design-system.md before changing any token.
+───────────────────────────────────────────────────────────────── */
 @layer base {
-  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 0 0% 9%; /* #171717 */
+    --card: 0 0% 100%;
+    --muted: 0 0% 96.5%; /* #f6f6f6 surfaces */
+    --muted-foreground: 0 0% 42%; /* #6b6b6b */
+    --subtle-foreground: 0 0% 58%; /* #949494 */
+    --border: 0 0% 91%; /* #e8e8e8 hairline */
+    --primary: 0 0% 9%; /* near-black actions */
+    --primary-foreground: 0 0% 100%;
+    --accent: 0 0% 9%; /* monochrome — emphasis stays black */
+    --ring: 0 0% 9%;
+    --success: 142 68% 42%; /* the single status accent */
+    --radius: 0.75rem;
+    color-scheme: light;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
   html {
     scroll-behavior: smooth;
@@ -14,127 +39,87 @@
   }
 
   body {
-    background-color: #080808;
-    color: #CCCCCC;
-    font-family: 'Inter', ui-sans-serif, system-ui;
+    @apply bg-background text-foreground font-body;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.6;
     overflow-x: hidden;
   }
 
-  /* Gold text selection */
   ::selection {
-    background: rgba(245, 197, 24, 0.22);
-    color: #fff;
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
   }
 
-  ::-webkit-scrollbar       { width: 4px; }
-  ::-webkit-scrollbar-track { background: #080808; }
-  ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: #F5C518; }
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 80%);
+    border-radius: 9999px;
+    border: 4px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 65%);
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
 }
 
 /* ─── Components ──────────────────────────────────────────────── */
 @layer components {
-
-  /* Clean near-black page */
-  .page-bg {
-    background-color: #080808;
-  }
-
-  /* Constrained content area */
   .section-container {
-    @apply max-w-6xl mx-auto px-6 lg:px-10;
+    @apply max-w-6xl mx-auto px-6 sm:px-8;
   }
 
-  /* Section label — gold / mono */
-  .section-label {
-    @apply inline-flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-[#F5C518]/70;
+  .eyebrow {
+    @apply inline-flex items-center font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground;
   }
 
-  /* Card — dark surface with 1px gold-tinted border */
   .card {
-    @apply bg-[#111111] border border-[#1E1E1E] transition-colors duration-300;
-  }
-  .card-hover {
-    @apply hover:border-[#2A2A2A] hover:shadow-[0_4px_24px_rgba(0,0,0,0.6)];
+    @apply rounded-xl border border-border bg-card;
   }
 
-  /* Primary button — gold fill, black text */
-  .btn-primary {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5C518] text-[#080808]
-           font-mono font-bold text-[13px] tracking-wide
-           hover:bg-[#F9E07A] transition-all duration-200 active:scale-[0.98];
+  /* Underline that wipes in on hover — the one bit of motion on links */
+  .link-underline {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
-
-  /* Ghost button — dark border, gold hover */
-  .btn-ghost {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-[#2A2A2A] text-[#888888]
-           font-mono text-[13px] tracking-wide
-           hover:border-[#F5C518]/50 hover:text-[#F5C518] transition-all duration-200;
-  }
-
-  /* Tech tag */
-  .tech-tag {
-    @apply inline-flex items-center px-2.5 py-1 bg-[#111111] border border-[#1E1E1E]
-           text-[#555555] font-mono text-[11px] tracking-wide
-           hover:border-[#F5C518]/30 hover:text-[#F9E07A] transition-all duration-150;
-  }
-
-  /* Skill badge */
-  .skill-badge {
-    @apply inline-flex items-center px-3.5 py-1.5 bg-[#111111] border border-[#1E1E1E]
-           text-[#888888] font-mono text-[12px]
-           hover:border-[#F5C518]/40 hover:text-[#F5C518]
-           transition-all duration-150 cursor-default;
+  .link-underline:hover {
+    background-size: 100% 1px;
   }
 }
 
 /* ─── Utilities ───────────────────────────────────────────────── */
 @layer utilities {
-
-  /* Gold gradient text — pure CSS, no React inline conflict */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #F5C518 0%, #F9E07A 60%, #fff3a3 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .text-balance {
+    text-wrap: balance;
   }
+}
 
-  /* Subtle gold scan line on photo */
-  .scan-overlay { position: relative; overflow: hidden; }
-  .scan-overlay::after {
-    content: '';
-    position: absolute;
-    left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(245,197,24,0.35), transparent);
-    animation: scanline 6s linear infinite;
-    pointer-events: none;
+/* ─── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-
-  @keyframes scanline {
-    0%   { top: -2px; }
-    100% { top: 101%; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .animate-fade-up { animation: fadeUp 0.5s ease forwards; }
-
-  /* Gold shimmer for CTAs */
-  .shimmer-gold {
-    background: linear-gradient(
-      90deg,
-      #F5C518 0%,
-      #F9E07A 40%,
-      #F5C518 60%,
-      #C09A0E 100%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 2.5s linear infinite;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

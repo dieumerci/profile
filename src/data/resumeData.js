@@ -1,6 +1,7 @@
 /* ─────────────────────────────────────────────────────────────────
    RESUME DATA — Source of Truth
    All portfolio content is derived from Dieumerci Kazadi's resume.
+   Icons reference names in src/components/ui/Icon.js.
 ───────────────────────────────────────────────────────────────── */
 
 export const personalInfo = {
@@ -8,10 +9,11 @@ export const personalInfo = {
   firstName: 'Dieumerci',
   lastName: 'Kazadi',
   title: 'Software Engineer',
+  location: 'Johannesburg, South Africa',
   tagline: 'Building secure, scalable systems that matter.',
   email: 'dieumercikaz@gmail.com',
   summary:
-    'Software engineer with 6+ years of experience building web and mobile applications. My journey started in 2018 across fintech, startups, civic tech, and enterprise — always focused on secure, scalable systems and clean, maintainable code. I value collaboration, continuous learning, and leveraging modern tools including AI to ship things that genuinely work.',
+    'Software engineer with 8+ years of experience building web and mobile applications. My journey started in 2017 across fintech, startups, civic tech, and enterprise — always focused on secure, scalable systems and clean, maintainable code. I value collaboration, continuous learning, and leveraging modern tools including AI to ship things that genuinely work.',
   aboutExtended: [
     'I started writing code in college, where I built an anonymous confessions platform for the campus community — my first taste of what it means to build something people actually use.',
     'Since then I\'ve worked across five organizations: a global VAT tech company, a media analytics firm, a civic technology non-profit, an AI-driven CX platform, and a cloud-based fintech on Salesforce. Each environment taught me something different about engineering in the real world.',
@@ -19,33 +21,71 @@ export const personalInfo = {
     'Outside of engineering, I\'m curious about AI applications, procurement technology, healthcare infrastructure, and building tools that reduce complexity for the people using them.',
   ],
   stats: [
-    { value: '6+', label: 'Years Shipping' },
+    { value: '8+', label: 'Years Shipping' },
     { value: '4', label: 'Products Built' },
+    { value: '5', label: 'Industries Served' },
   ],
   strengths: [
     {
       title: 'Backend Architecture',
       description:
         'Designing APIs, data models, and service boundaries that stay clean as systems grow.',
-      icon: '⬡',
+      icon: 'server',
     },
     {
       title: 'Security & Reliability',
       description:
         'Integrating security tooling, writing validated systems, and handling production with care.',
-      icon: '◈',
+      icon: 'shield',
     },
     {
       title: 'Data Pipelines',
       description:
         'Building ETL workflows, orchestration with Airflow, and RESTful data services for civic and analytics domains.',
-      icon: '◫',
+      icon: 'database',
     },
     {
       title: 'Cross-Domain Depth',
       description:
         'Fintech, civic tech, media analytics, VAT compliance, AI-driven CX — each domain has sharpened a different edge.',
-      icon: '◻',
+      icon: 'layers',
+    },
+  ],
+};
+
+/* ─── Hero Positioning ────────────────────────────────────────── */
+export const positioning = {
+  eyebrow: 'Software Engineer · AI-Powered Products',
+  statement:
+    'I design and ship intelligent software — AI-powered products, SaaS platforms, and systems built to scale.',
+  intro:
+    'Eight years of production engineering across fintech, civic tech, and enterprise — now channeled into building AI-driven products like Tendry, Reklyn, and Memoire, from architecture to launch.',
+};
+
+/* ─── AI & Innovation ─────────────────────────────────────────── */
+export const aiFocus = {
+  eyebrow: 'AI & Innovation',
+  title: 'Software that thinks with you.',
+  statement:
+    'I build intelligent software systems that combine clean engineering, thoughtful design, and AI-powered workflows to create products that feel useful, modern, and alive.',
+  points: [
+    {
+      title: 'AI-Native Products',
+      description:
+        'Tendry, Reklyn, and Memoire are built around LLM-powered workflows — requirement extraction, denial analysis, and career coaching embedded in the product core, not bolted on.',
+      icon: 'sparkles',
+    },
+    {
+      title: 'Production-Grade Foundations',
+      description:
+        'Intelligence is only useful on rails: secure backends, clean APIs, data pipelines, and cloud infrastructure that keep AI features fast, safe, and reliable.',
+      icon: 'shield',
+    },
+    {
+      title: 'Human-Centered Automation',
+      description:
+        'From government procurement to healthcare revenue, I use AI to reduce complexity for the people doing the work — not to add another layer of it.',
+      icon: 'zap',
     },
   ],
 };
@@ -61,6 +101,7 @@ export const experience = [
     startDate: '2024-05',
     endDate: null,
     domain: 'Fintech · Cloud Banking',
+    tone: 'primary',
     summary:
       'Cloud-based fintech platform built on Salesforce for digital banking and lending. Focus area: security, infrastructure, and production financial software.',
     responsibilities: [
@@ -70,7 +111,6 @@ export const experience = [
       'Collaborate cross-functionally using structured Git workflows, code reviews, and CI/CD pipelines.',
     ],
     tech: ['Ruby', 'Ruby on Rails', 'Docker', 'AWS', 'Semgrep', 'Orca', 'Salesforce', 'Git'],
-    color: '#F5C518',
   },
   {
     id: 2,
@@ -81,6 +121,7 @@ export const experience = [
     startDate: '2022-12',
     endDate: '2024-04',
     domain: 'AI · Customer Experience · Enterprise',
+    tone: 'accent',
     summary:
       'AI-driven customer experience and automation platforms for enterprise clients in banking, telecom, and retail. Backend services, integrations, and AI messaging workflows.',
     responsibilities: [
@@ -91,7 +132,6 @@ export const experience = [
       'Integrated monitoring and logging systems using Grafana and Loki for observability across services.',
     ],
     tech: ['Elixir', 'Phoenix', 'Python', 'Django', 'REST APIs', 'Grafana', 'Loki', 'PostgreSQL'],
-    color: '#F5C518',
   },
   {
     id: 3,
@@ -102,6 +142,7 @@ export const experience = [
     startDate: '2020-12',
     endDate: '2022-11',
     domain: 'Civic Tech · Open Data · Government',
+    tone: 'primary',
     summary:
       'Civic tech non-profit building open data platforms in partnership with African governments. Data pipelines, REST APIs, and open data infrastructure.',
     responsibilities: [
@@ -112,7 +153,6 @@ export const experience = [
       'Wrote Python backend services to process and validate large-volume public datasets.',
     ],
     tech: ['Python', 'Apache Airflow', 'AWS', 'REST APIs', 'CKAN', 'PostgreSQL', 'Docker'],
-    color: '#F5C518',
   },
   {
     id: 4,
@@ -123,6 +163,7 @@ export const experience = [
     startDate: '2019-10',
     endDate: '2020-11',
     domain: 'Media Analytics · Brand Intelligence',
+    tone: 'accent',
     summary:
       'Brand intelligence and media analytics company. Backend systems, media monitoring pipelines, and web scraping infrastructure.',
     responsibilities: [
@@ -133,7 +174,6 @@ export const experience = [
       'Built internal automation tooling to reduce manual reporting overhead.',
     ],
     tech: ['Ruby', 'Ruby on Rails', 'Django', 'Python', 'Selenium', 'REST APIs', 'MySQL'],
-    color: '#F5C518',
   },
   {
     id: 5,
@@ -144,6 +184,7 @@ export const experience = [
     startDate: '2017-10',
     endDate: '2019-09',
     domain: 'FinTech · Tax Compliance · Global',
+    tone: 'primary',
     summary:
       'Global VAT technology company specializing in indirect tax compliance and reclamation. Backend systems and multi-jurisdiction data platforms.',
     responsibilities: [
@@ -154,7 +195,6 @@ export const experience = [
       'Contributed to quality control pipelines ensuring data integrity for client-facing outputs.',
     ],
     tech: ['Python', 'SQL', 'PostgreSQL', 'REST APIs', 'TDD', 'Automated Testing'],
-    color: '#F5C518',
   },
 ];
 
@@ -182,37 +222,43 @@ export const education = [
   },
 ];
 
-/* ─── Skills ──────────────────────────────────────────────────── */
+/* ─── Skills — grouped by engineering domain ──────────────────── */
 export const skillGroups = [
   {
-    category: 'Languages',
-    icon: '{ }',
-    skills: ['Ruby', 'Python', 'JavaScript', 'SQL', 'Elixir'],
+    category: 'Backend Engineering',
+    icon: 'server',
+    blurb: 'APIs, services, and domain logic that stay clean as systems grow.',
+    skills: ['Ruby on Rails', 'Django', 'Flask', 'Phoenix', 'Elixir', 'Ruby', 'Python'],
   },
   {
-    category: 'Frameworks & Libraries',
-    icon: '◈',
-    skills: ['Ruby on Rails', 'Django', 'Flask', 'Phoenix', 'React.js'],
+    category: 'Frontend & APIs',
+    icon: 'layout',
+    blurb: 'Product interfaces and the API contracts behind them.',
+    skills: ['React.js', 'JavaScript', 'REST', 'GraphQL'],
   },
   {
-    category: 'Databases',
-    icon: '⬡',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'],
+    category: 'AI & Automation',
+    icon: 'sparkles',
+    blurb: 'LLM-powered features, orchestration, and workflow automation.',
+    skills: ['AI/LLM APIs', 'Apache Airflow', 'Selenium', 'Sidekiq', 'Automation Pipelines'],
+  },
+  {
+    category: 'Databases & Data',
+    icon: 'database',
+    blurb: 'Modeling, storing, and moving data with correctness in mind.',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQL'],
   },
   {
     category: 'Cloud & DevOps',
-    icon: '◫',
+    icon: 'cloud',
+    blurb: 'Infrastructure, containers, and pipelines that ship reliably.',
     skills: ['AWS', 'Google Cloud', 'Amazon S3', 'Docker', 'Git Actions', 'Jenkins'],
   },
   {
-    category: 'APIs & Protocols',
-    icon: '⟶',
-    skills: ['REST', 'GraphQL', 'TDD', 'Agile'],
-  },
-  {
-    category: 'Tools & Workflow',
-    icon: '◻',
-    skills: ['Git', 'GitHub', 'Jira', 'Trello', 'Postman', 'Sidekiq'],
+    category: 'Practice & Tooling',
+    icon: 'wrench',
+    blurb: 'The discipline and day-to-day toolchain behind delivery.',
+    skills: ['TDD', 'Agile', 'Git', 'GitHub', 'Jira', 'Trello', 'Postman'],
   },
 ];
 
@@ -236,6 +282,10 @@ export const projects = [
     category: 'GovTech · Procurement Intelligence',
     tagline: 'AI-powered tender and procurement copilot.',
     status: 'Product',
+    badges: ['AI-Powered', 'SaaS'],
+    icon: 'briefcase',
+    gradient:
+      'linear-gradient(135deg, hsl(252 92% 72% / 0.28) 0%, hsl(187 90% 61% / 0.10) 100%)',
     problem:
       'Applying for government tenders is complex, document-heavy, and inaccessible for most small and medium-sized businesses. Compliance requirements are buried in long documents, and missing a single item can disqualify an entire application.',
     solution:
@@ -251,7 +301,6 @@ export const projects = [
     role: 'Product builder — system design, backend architecture, AI integration, and product direction.',
     tech: ['Python', 'Ruby on Rails', 'PostgreSQL', 'AWS', 'AI/LLM APIs', 'REST APIs', 'Docker'],
     highlight: 'Procurement intelligence that turns complexity into clarity.',
-    accentColor: '#F5C518',
   },
   {
     id: 2,
@@ -260,6 +309,10 @@ export const projects = [
     category: 'HealthTech · Revenue Recovery',
     tagline: 'Denied claims intelligence and revenue recovery for healthcare.',
     status: 'Product',
+    badges: ['AI-Powered', 'SaaS'],
+    icon: 'shield',
+    gradient:
+      'linear-gradient(135deg, hsl(187 90% 61% / 0.24) 0%, hsl(252 92% 72% / 0.10) 100%)',
     problem:
       'Healthcare providers lose significant revenue to denied and underpaid insurance claims every year. Identifying which claims to prioritize, understanding denial reasons, and managing resubmissions manually is inefficient, error-prone, and expensive.',
     solution:
@@ -275,15 +328,19 @@ export const projects = [
     role: 'Product builder — system architecture, data modeling, AI-assisted analysis layer, and core platform development.',
     tech: ['Python', 'Django', 'PostgreSQL', 'REST APIs', 'AI/LLM APIs', 'AWS', 'Docker'],
     highlight: 'Every denied claim is revenue waiting to be recovered.',
-    accentColor: '#F5C518',
   },
   {
     id: 3,
     name: 'Memoire',
     slug: 'memoire',
     category: 'CareerTech · AI Workspace',
-    tagline: 'Your personal AI career coach — resume, interviews, salary, and career planning in one intelligent workspace.',
+    tagline:
+      'Your personal AI career coach — resume, interviews, salary, and career planning in one intelligent workspace.',
     status: 'Product',
+    badges: ['AI-Powered', 'SaaS'],
+    icon: 'sparkles',
+    gradient:
+      'linear-gradient(135deg, hsl(252 92% 72% / 0.26) 0%, hsl(320 85% 70% / 0.10) 100%)',
     problem:
       'Job seekers juggle a scattered set of disconnected tools to write resumes, prepare for interviews, research salary benchmarks, and map their career path. None of these tools are personalized, connected, or intelligent — leaving people to figure it out alone at every stage.',
     solution:
@@ -299,7 +356,6 @@ export const projects = [
     role: 'Product builder — full-stack development, AI integration, product design, and career feature architecture.',
     tech: ['Python', 'React.js', 'PostgreSQL', 'AWS', 'AI/LLM APIs', 'REST APIs', 'Docker'],
     highlight: 'A career coach that thinks with you, not just a tool that formats for you.',
-    accentColor: '#F5C518',
   },
   {
     id: 4,
@@ -308,6 +364,10 @@ export const projects = [
     category: 'Social · Anonymous Expression',
     tagline: 'A safe space to share, vent, and be heard — anonymously.',
     status: 'Product',
+    badges: ['Startup', 'Social Platform'],
+    icon: 'send',
+    gradient:
+      'linear-gradient(135deg, hsl(320 85% 70% / 0.22) 0%, hsl(187 90% 61% / 0.10) 100%)',
     problem:
       'People often have thoughts, frustrations, and experiences they need to express — but social media\'s identity-tied nature creates pressure and fear of judgment. There\'s no simple, safe space to just say what you feel.',
     solution:
@@ -323,7 +383,71 @@ export const projects = [
     role: 'Founder and builder — full-stack development, product design, and community feature architecture.',
     tech: ['Ruby on Rails', 'React.js', 'PostgreSQL', 'Redis', 'Sidekiq', 'AWS', 'Docker'],
     highlight: 'Expression without identity. Comfort without judgment.',
-    accentColor: '#F5C518',
+  },
+];
+
+/* ─── AI Console Demos ────────────────────────────────────────────
+   Scenarios for the AI Lab terminal. Every line is grounded in a
+   real shipped feature (see projects[].features) — dramatized for
+   the terminal format, never invented. ─────────────────────────── */
+export const aiDemos = [
+  {
+    id: 'tendry',
+    label: 'Tendry',
+    intro: 'procurement copilot — tender analysis',
+    command: 'tendry analyze tender-notice.pdf',
+    lines: [
+      { type: 'run', text: 'reading tender document…' },
+      { type: 'ok', text: 'requirements extracted and structured' },
+      { type: 'warn', text: 'compliance gap — missing documents flagged' },
+      { type: 'next', text: 'drafting guided response…' },
+    ],
+  },
+  {
+    id: 'reklyn',
+    label: 'Reklyn',
+    intro: 'claims intelligence — revenue recovery',
+    command: 'reklyn triage --denied-claims',
+    lines: [
+      { type: 'run', text: 'analyzing denial reasons…' },
+      { type: 'ok', text: 'denials categorized by root cause' },
+      { type: 'ok', text: 'highest-value recoveries ranked first' },
+      { type: 'next', text: 'building appeal workflow…' },
+    ],
+  },
+  {
+    id: 'memoire',
+    label: 'Memoire',
+    intro: 'ai career coach — interview prep',
+    command: 'memoire coach --interview-prep',
+    lines: [
+      { type: 'run', text: 'tailoring questions to profile…' },
+      { type: 'ok', text: 'questions generated with smart follow-ups' },
+      { type: 'ok', text: 'salary expectations benchmarked' },
+      { type: 'next', text: 'updating career plan…' },
+    ],
+  },
+];
+
+/* ─── Social Links ────────────────────────────────────────────── */
+export const socialLinks = [
+  {
+    label: 'GitHub',
+    value: 'github.com/dieumercikaz',
+    href: 'https://github.com/dieumercikaz',
+    icon: 'github',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/dieumercikaz',
+    href: 'https://linkedin.com/in/dieumercikaz',
+    icon: 'linkedin',
+  },
+  {
+    label: 'Email',
+    value: 'dieumercikaz@gmail.com',
+    href: 'mailto:dieumercikaz@gmail.com',
+    icon: 'mail',
   },
 ];
 

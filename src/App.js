@@ -1,50 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { MotionConfig } from 'framer-motion';
 import './index.css';
 
-import Navbar from './components/Navbar';
+import Nav from './components/Nav';
 import Footer from './components/Footer';
-
-import Home       from './pages/Home';
-import About      from './pages/About';
-import Experience from './pages/Experience';
-import Education  from './pages/Education';
-import Skills     from './pages/Skills';
-import Projects   from './pages/Projects';
-import Contact    from './pages/Contact';
-
-/* AnimatePresence requires reading location inside Router context */
-function AnimatedRoutes() {
-  const location = useLocation();
-
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/"           element={<Home />} />
-        <Route path="/about"      element={<About />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/education"  element={<Education />} />
-        <Route path="/skills"     element={<Skills />} />
-        <Route path="/projects"   element={<Projects />} />
-        <Route path="/contact"    element={<Contact />} />
-        {/* Fallback → Home */}
-        <Route path="*"           element={<Home />} />
-      </Routes>
-    </AnimatePresence>
-  );
-}
+import ErrorBoundary, { RouteErrorFallback } from './components/ErrorBoundary';
+import Portfolio from './Portfolio';
 
 export default function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-[#0A0A0A] text-[#C4CDDC] font-body flex flex-col">
-        <Navbar />
-        <div className="flex-1">
-          <AnimatedRoutes />
+    <MotionConfig reducedMotion="user">
+      {/* Keyboard users can bypass the nav */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
+
+      <ErrorBoundary fallback={<RouteErrorFallback />}>
+        <div className="flex min-h-screen flex-col bg-background">
+          <Nav />
+          <main id="main" className="flex-1">
+            <Portfolio />
+          </main>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Router>
+      </ErrorBoundary>
+    </MotionConfig>
   );
 }

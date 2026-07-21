@@ -1,56 +1,47 @@
 /** @type {import('tailwindcss').Config} */
+/*
+ * MONO — a minimal monochrome light system. Near-black on white, hairline
+ * borders, one green status accent. All colors resolve through CSS variables
+ * defined in src/index.css. See docs/design-system.md.
+ */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
       colors: {
-        // Near-pure blacks — warm undertone lets gold pop harder
-        ink: {
-          950: '#050505',
-          900: '#080808',
-          800: '#111111',
-          700: '#1A1A1A',
-          600: '#1E1E1E',
-          500: '#2A2A2A',
+        background: 'hsl(var(--background) / <alpha-value>)',
+        foreground: 'hsl(var(--foreground) / <alpha-value>)',
+        card: 'hsl(var(--card) / <alpha-value>)',
+        muted: {
+          DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+          foreground: 'hsl(var(--muted-foreground) / <alpha-value>)',
         },
-        // Accent: Rich IMDb-gold — premium, saturated, instantly striking
-        gold: {
-          DEFAULT: '#F5C518',
-          light:   '#F9E07A',
-          deep:    '#C09A0E',
-          subtle:  'rgba(245,197,24,0.10)',
-          glow:    'rgba(245,197,24,0.06)',
+        'subtle-foreground': 'hsl(var(--subtle-foreground) / <alpha-value>)',
+        border: 'hsl(var(--border) / <alpha-value>)',
+        primary: {
+          DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+          foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
         },
+        accent: 'hsl(var(--accent) / <alpha-value>)',
+        ring: 'hsl(var(--ring) / <alpha-value>)',
+        success: 'hsl(var(--success) / <alpha-value>)',
+      },
+      borderColor: {
+        DEFAULT: 'hsl(var(--border))',
       },
       fontFamily: {
-        display: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
-        body:    ['Inter', 'ui-sans-serif', 'system-ui'],
-        mono:    ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular'],
+        display: ['Space Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       boxShadow: {
-        'gold':       '0 0 32px rgba(245,197,24,0.18)',
-        'gold-sm':    '0 0 16px rgba(245,197,24,0.10)',
-        'card':       '0 2px 16px rgba(0,0,0,0.50)',
-        'card-hover': '0 8px 40px rgba(0,0,0,0.70)',
-      },
-      animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float':      'float 7s ease-in-out infinite',
-        'scan':       'scan 6s linear infinite',
-        'shimmer':    'shimmer 2s linear infinite',
+        card: '0 1px 2px 0 rgba(17, 17, 17, 0.04)',
+        'card-hover': '0 12px 40px -14px rgba(17, 17, 17, 0.16)',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%':      { transform: 'translateY(-8px)' },
-        },
-        scan: {
-          '0%':   { top: '-4px' },
-          '100%': { top: '101%' },
-        },
-        shimmer: {
-          '0%':   { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
+        'fade-up': {
+          from: { opacity: '0', transform: 'translateY(12px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },
