@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../data/resumeData';
 import Reveal from '../components/Reveal';
-import { SectionHeading, Badge, Tag, Icon } from '../components/ui';
+import { SectionHeading, Badge, Tag, Icon, TextLink } from '../components/ui';
 
 function MonoLabel({ children }) {
   return (
@@ -103,6 +103,14 @@ function ProjectRow({ project, index }) {
                     <Tag key={t}>{t}</Tag>
                   ))}
                 </div>
+                {project.website && (
+                  <div className="mt-6">
+                    <TextLink href={project.website} target="_blank" rel="noopener noreferrer">
+                      {project.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+                      <Icon name="arrow-up-right" size={16} />
+                    </TextLink>
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>
