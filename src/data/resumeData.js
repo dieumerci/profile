@@ -367,7 +367,7 @@ export const projects = [
     status: 'Pre-Launch',
     badges: ['Mobile App', 'Pre-Launch'],
     icon: 'send',
-    website: 'https://www.confy.ink',
+    website: 'https://confy.ink/en',
     gradient:
       'linear-gradient(135deg, hsl(320 85% 70% / 0.22) 0%, hsl(187 90% 61% / 0.10) 100%)',
     problem:
