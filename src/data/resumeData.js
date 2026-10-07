@@ -59,7 +59,7 @@ export const positioning = {
   statement:
     'I design and ship intelligent software — AI-powered products, SaaS platforms, and systems built to scale.',
   intro:
-    'Eight years of production engineering across fintech, civic tech, and enterprise — now channeled into building AI-driven products like Tendry, Reklyn, and Memoire, from architecture to launch.',
+    'Eight years of production engineering across fintech, civic tech, and enterprise — now channeled into building AI-driven products like Reklyn, Tideover, and Oravia, from architecture to launch.',
 };
 
 /* ─── AI & Innovation ─────────────────────────────────────────── */
@@ -72,7 +72,7 @@ export const aiFocus = {
     {
       title: 'AI-Native Products',
       description:
-        'Tendry, Reklyn, and Memoire are built around LLM-powered workflows — requirement extraction, denial analysis, and career coaching embedded in the product core, not bolted on.',
+        'Reklyn, Tideover, and Oravia are built around LLM-powered workflows — denial analysis, between-session support, and personalized astrology guidance embedded in the product core, not bolted on.',
       icon: 'sparkles',
     },
     {
@@ -277,33 +277,6 @@ export const primarySkills = [
 export const projects = [
   {
     id: 1,
-    name: 'Tendry',
-    slug: 'tendry',
-    category: 'GovTech · Procurement Intelligence',
-    tagline: 'AI-powered tender and procurement copilot.',
-    status: 'Product',
-    badges: ['AI-Powered', 'SaaS'],
-    icon: 'briefcase',
-    gradient:
-      'linear-gradient(135deg, hsl(252 92% 72% / 0.28) 0%, hsl(187 90% 61% / 0.10) 100%)',
-    problem:
-      'Applying for government tenders is complex, document-heavy, and inaccessible for most small and medium-sized businesses. Compliance requirements are buried in long documents, and missing a single item can disqualify an entire application.',
-    solution:
-      'Tendry is an AI-powered procurement copilot designed to make tender applications accessible and manageable. It helps businesses discover relevant opportunities, extract and understand requirements, identify compliance gaps, and draft stronger, faster responses.',
-    features: [
-      'Tender discovery and opportunity matching based on business profile',
-      'AI-assisted requirement extraction from complex tender documents',
-      'Compliance gap analysis — flags missing documents or criteria',
-      'Response drafting assistance guided by tender requirements',
-      'Document management and workflow organization',
-      'Audit trail and submission tracking',
-    ],
-    role: 'Product builder — system design, backend architecture, AI integration, and product direction.',
-    tech: ['Python', 'Ruby on Rails', 'PostgreSQL', 'AWS', 'AI/LLM APIs', 'REST APIs', 'Docker'],
-    highlight: 'Procurement intelligence that turns complexity into clarity.',
-  },
-  {
-    id: 2,
     name: 'Reklyn',
     slug: 'reklyn',
     category: 'HealthTech · Revenue Recovery',
@@ -311,6 +284,7 @@ export const projects = [
     status: 'Product',
     badges: ['AI-Powered', 'SaaS'],
     icon: 'shield',
+    website: 'https://reklyn.com/',
     gradient:
       'linear-gradient(135deg, hsl(187 90% 61% / 0.24) 0%, hsl(252 92% 72% / 0.10) 100%)',
     problem:
@@ -330,35 +304,88 @@ export const projects = [
     highlight: 'Every denied claim is revenue waiting to be recovered.',
   },
   {
-    id: 3,
-    name: 'Memoire',
-    slug: 'memoire',
-    category: 'CareerTech · AI Workspace',
-    tagline:
-      'Your personal AI career coach — resume, interviews, salary, and career planning in one intelligent workspace.',
+    id: 2,
+    name: 'Reklyn Intake',
+    slug: 'reklyn-intake',
+    category: 'HealthTech · Claims Intake',
+    tagline: 'The intake front door for denied-claims recovery.',
     status: 'Product',
     badges: ['AI-Powered', 'SaaS'],
-    icon: 'sparkles',
+    icon: 'layers',
+    website: 'https://reklynintake.com',
     gradient:
-      'linear-gradient(135deg, hsl(252 92% 72% / 0.26) 0%, hsl(320 85% 70% / 0.10) 100%)',
+      'linear-gradient(135deg, hsl(187 90% 61% / 0.20) 0%, hsl(252 92% 72% / 0.12) 100%)',
     problem:
-      'Job seekers juggle a scattered set of disconnected tools to write resumes, prepare for interviews, research salary benchmarks, and map their career path. None of these tools are personalized, connected, or intelligent — leaving people to figure it out alone at every stage.',
+      'Recovering denied revenue starts with getting claims into one place in a usable shape. When intake is manual or scattered across billing exports and spreadsheets, denials go untracked and recovery work never starts.',
     solution:
-      'Memoire is an AI-powered career platform that acts as a personal career coach — not just a template generator. It thinks with you: improving your resume, training you for interviews with AI-generated questions, analyzing salary expectations against real market data, and guiding your career decisions through an intelligent planning workspace.',
+      'Reklyn Intake is the intake companion to Reklyn. It gives clinics and healthcare organizations a structured way to bring denied and underpaid claims into the recovery workflow, so they are ready for denial analysis, prioritization, and appeal.',
     features: [
-      'AI resume builder that improves and tailors content — not just formats it',
-      'Interview prep with AI-generated questions, smart follow-ups, and session notes',
-      'Salary analyzer with market benchmarks to set informed expectations',
-      'Career planner for mapping paths, goals, and progression strategies',
-      'Document management for all career assets in one place',
-      'AI Coach available across every workflow for personalized guidance',
+      'Structured claim intake for denied and underpaid claims',
+      'Consistent, clean data ready for denial reason analysis',
+      'Hands claims straight into the Reklyn recovery workflow',
     ],
-    role: 'Product builder — full-stack development, AI integration, product design, and career feature architecture.',
-    tech: ['Python', 'React.js', 'PostgreSQL', 'AWS', 'AI/LLM APIs', 'REST APIs', 'Docker'],
-    highlight: 'A career coach that thinks with you, not just a tool that formats for you.',
+    role: 'Product builder — system architecture, data modeling, and core platform development.',
+    tech: ['Python', 'Django', 'PostgreSQL', 'REST APIs', 'AWS', 'Docker'],
+    highlight: 'Better intake means more revenue recovered.',
+  },
+  {
+    id: 3,
+    name: 'Tideover',
+    slug: 'tideover',
+    category: 'HealthTech · Mental Wellbeing',
+    tagline: 'A quiet companion for the days between therapy sessions.',
+    status: 'Live',
+    badges: ['Mobile App', 'AI-Powered'],
+    icon: 'sparkles',
+    website: 'https://tideover.care',
+    gradient:
+      'linear-gradient(135deg, hsl(187 90% 61% / 0.22) 0%, hsl(252 92% 72% / 0.10) 100%)',
+    problem:
+      'Support during therapy is structured and scheduled, but hard moments rarely follow the calendar. The days between sessions can feel unsupported, and people need something gentle to lean on without it pretending to be therapy.',
+    solution:
+      'Tideover is an AI-powered companion app for people in therapy. It offers check-ins and support between sessions, and is explicitly positioned as a supplement to professional care, never a replacement for therapy or crisis intervention. It is available on iOS and Android in more than ten languages.',
+    features: [
+      'AI companion for supportive, between-session conversations',
+      'Diary cards for tracking wellbeing over time',
+      'Clear crisis resources and emergency guidance built in',
+      'Available on iOS and Android',
+      'Multi-language support across 10+ languages',
+      'Privacy-conscious design with honest limits on what it is for',
+    ],
+    role: 'Product builder — product design, AI integration, and mobile app development.',
+    tech: ['AI/LLM APIs', 'iOS', 'Android', 'REST APIs'],
+    highlight: 'Support that stays with you between sessions.',
   },
   {
     id: 4,
+    name: 'Oravia',
+    slug: 'oravia',
+    category: 'Consumer · AI Astrology',
+    tagline: 'A living daily companion built on your real birth chart.',
+    status: 'Live',
+    badges: ['AI-Powered', 'Consumer App'],
+    icon: 'zap',
+    website: 'https://oraviaapp.com/',
+    gradient:
+      'linear-gradient(135deg, hsl(252 92% 72% / 0.26) 0%, hsl(320 85% 70% / 0.10) 100%)',
+    problem:
+      'Most horoscopes are written for a sun sign and shared by millions of people, so they rarely feel personal. Real astrology starts from your actual birth chart.',
+    solution:
+      'Oravia is an astrology app that builds everything from your real birth chart. It delivers personalized daily horoscopes, transit tracking, and compatibility readings, with an AI astrologer named Luna to talk things through.',
+    features: [
+      'Personalization from your actual birth chart',
+      'Daily horoscopes generated for you',
+      'Transit tracking',
+      'Compatibility readings',
+      'Luna, an AI astrologer you can ask questions',
+      'Daily sayings and insights',
+    ],
+    role: 'Product builder — product design, AI integration, and app development.',
+    tech: ['AI/LLM APIs', 'REST APIs'],
+    highlight: 'Astrology that starts from your chart, not your sun sign.',
+  },
+  {
+    id: 5,
     name: 'Confy',
     slug: 'confy',
     category: 'Consumer · Anonymous Confessions',
@@ -394,18 +421,6 @@ export const projects = [
    the terminal format, never invented. ─────────────────────────── */
 export const aiDemos = [
   {
-    id: 'tendry',
-    label: 'Tendry',
-    intro: 'procurement copilot — tender analysis',
-    command: 'tendry analyze tender-notice.pdf',
-    lines: [
-      { type: 'run', text: 'reading tender document…' },
-      { type: 'ok', text: 'requirements extracted and structured' },
-      { type: 'warn', text: 'compliance gap — missing documents flagged' },
-      { type: 'next', text: 'drafting guided response…' },
-    ],
-  },
-  {
     id: 'reklyn',
     label: 'Reklyn',
     intro: 'claims intelligence — revenue recovery',
@@ -415,18 +430,6 @@ export const aiDemos = [
       { type: 'ok', text: 'denials categorized by root cause' },
       { type: 'ok', text: 'highest-value recoveries ranked first' },
       { type: 'next', text: 'building appeal workflow…' },
-    ],
-  },
-  {
-    id: 'memoire',
-    label: 'Memoire',
-    intro: 'ai career coach — interview prep',
-    command: 'memoire coach --interview-prep',
-    lines: [
-      { type: 'run', text: 'tailoring questions to profile…' },
-      { type: 'ok', text: 'questions generated with smart follow-ups' },
-      { type: 'ok', text: 'salary expectations benchmarked' },
-      { type: 'next', text: 'updating career plan…' },
     ],
   },
 ];

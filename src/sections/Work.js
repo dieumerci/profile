@@ -129,7 +129,7 @@ export default function Work() {
             index="02"
             eyebrow="Selected Work"
             title="Products, not portfolio pieces."
-            subtitle="Four platforms — designed, architected, and shipped end-to-end."
+            subtitle="Five platforms — designed, architected, and shipped end-to-end."
           />
         </Reveal>
 
