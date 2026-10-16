@@ -8,7 +8,7 @@ export default function Stack() {
     <section id="stack" className="border-t border-border py-20 sm:py-28">
       <div className="section-container">
         <Reveal>
-          <SectionHeading index="03" eyebrow="Skills & Stack" title="The tools behind the work." />
+          <SectionHeading index="04" eyebrow="Skills & Stack" title="The tools behind the work." />
         </Reveal>
 
         {/* Daily drivers */}

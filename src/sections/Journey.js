@@ -5,15 +5,14 @@ import { SectionHeading, Tag, Icon } from '../components/ui';
 
 function Role({ entry }) {
   const isCurrent = !entry.endDate;
+  const wide = entry.span === 2;
   return (
-    <div className="grid gap-4 border-b border-border py-9 sm:grid-cols-12 sm:gap-8">
-      {/* Left — period + company */}
-      <div className="sm:col-span-4">
-        <div className="font-mono text-xs uppercase tracking-wide text-muted-foreground">
-          {entry.period}
-        </div>
-        <h4 className="mt-2 flex flex-wrap items-center gap-2 font-display text-xl font-semibold text-foreground">
-          {entry.company}
+    <div className={`card h-full p-6 ${wide ? 'sm:grid sm:grid-cols-2 sm:gap-10' : 'flex flex-col'}`}>
+      <div>
+        <div className="flex items-center justify-between gap-3">
+          <span className="font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+            {entry.period}
+          </span>
           {isCurrent && (
             <span className="inline-flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-success" aria-hidden="true" />
@@ -22,15 +21,16 @@ function Role({ entry }) {
               </span>
             </span>
           )}
+        </div>
+        <h4 className="mt-4 font-display text-lg font-semibold leading-snug text-foreground">
+          {entry.company}
         </h4>
         <div className="mt-1 text-sm text-muted-foreground">{entry.role}</div>
         <div className="mt-1 font-mono text-[11px] text-subtle-foreground">{entry.domain}</div>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{entry.summary}</p>
       </div>
-
-      {/* Right — summary + work + tech */}
-      <div className="sm:col-span-8">
-        <p className="leading-relaxed text-muted-foreground">{entry.summary}</p>
-        <ul className="mt-4 space-y-2">
+      <div className={wide ? 'mt-6 sm:mt-0' : ''}>
+        <ul className={wide ? 'space-y-2' : 'mt-4 space-y-2'}>
           {entry.responsibilities.map((r) => (
             <li key={r} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground">
               <Icon name="check" size={14} className="mt-1 shrink-0 text-foreground" />
@@ -54,16 +54,20 @@ export default function Journey() {
       <div className="section-container">
         <Reveal>
           <SectionHeading
-            index="04"
+            index="02"
             eyebrow="Journey"
-            title="Eight years of production software."
-            subtitle="Five companies, five industries — fintech, media analytics, civic tech, AI-driven CX, and cloud banking."
+            title="Software that had to stay up."
+            subtitle="Cloud banking, civic data, media analytics, enterprise customer experience, and tax compliance."
           />
         </Reveal>
 
-        <div className="mt-14 border-t border-border">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {experience.map((entry, i) => (
-            <Reveal key={entry.id} delay={i * 0.04}>
+            <Reveal
+              key={entry.id}
+              delay={i * 0.04}
+              className={entry.span === 2 ? 'h-full sm:col-span-2' : 'h-full'}
+            >
               <Role entry={entry} />
             </Reveal>
           ))}

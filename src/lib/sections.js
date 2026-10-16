@@ -3,8 +3,9 @@
 export const SECTIONS = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'work', label: 'Work' },
-  { id: 'stack', label: 'Stack' },
   { id: 'journey', label: 'Journey' },
+  { id: 'play', label: 'Play' },
+  { id: 'stack', label: 'Stack' },
+  { id: 'work', label: 'Work' },
   { id: 'contact', label: 'Contact' },
 ];

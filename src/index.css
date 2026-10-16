@@ -101,6 +101,10 @@
   .link-underline:hover {
     background-size: 100% 1px;
   }
+
+  .shell-log {
+    scrollbar-color: hsl(0 0% 45%) transparent;
+  }
 }
 
 /* ─── Utilities ───────────────────────────────────────────────── */
