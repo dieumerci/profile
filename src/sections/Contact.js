@@ -2,13 +2,14 @@ import React from 'react';
 import { personalInfo, socialLinks, CV_URL } from '../data/resumeData';
 import Reveal from '../components/Reveal';
 import { Eyebrow, Icon } from '../components/ui';
+import ContactForm, { contactFormConfigured } from '../components/ContactForm';
 
 export default function Contact() {
   return (
     <section id="contact" className="border-t border-border py-24 sm:py-36">
       <div className="section-container">
         <Reveal>
-          <Eyebrow index="05">Contact</Eyebrow>
+          <Eyebrow index="06">Contact</Eyebrow>
         </Reveal>
 
         <Reveal delay={0.05}>
@@ -34,6 +35,14 @@ export default function Contact() {
             </a>
           </div>
         </Reveal>
+
+        {contactFormConfigured && (
+          <Reveal delay={0.18}>
+            <div className="mt-12 max-w-2xl">
+              <ContactForm />
+            </div>
+          </Reveal>
+        )}
 
         <Reveal delay={0.2}>
           <div className="mt-14 flex flex-wrap gap-x-10 gap-y-4 border-t border-border pt-8">

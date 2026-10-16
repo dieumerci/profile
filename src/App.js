@@ -5,6 +5,7 @@ import './index.css';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import ErrorBoundary, { RouteErrorFallback } from './components/ErrorBoundary';
+import CookieBanner from './components/CookieBanner';
 import Portfolio from './Portfolio';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
           </main>
           <Footer />
         </div>
+        <CookieBanner />
       </ErrorBoundary>
     </MotionConfig>
   );

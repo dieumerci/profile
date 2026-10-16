@@ -2,6 +2,7 @@ import React from 'react';
 import { personalInfo, socialLinks, CV_URL } from '../data/resumeData';
 import { SECTIONS } from '../lib/sections';
 import { Icon } from './ui';
+import { resetConsent } from '../lib/consent';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -65,6 +66,13 @@ export default function Footer() {
           <p className="font-mono text-xs text-subtle-foreground">
             © {year} Dieumerci Kazadi
           </p>
+          <button
+            type="button"
+            onClick={resetConsent}
+            className="text-left font-mono text-xs text-subtle-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            Cookie settings
+          </button>
           <p className="font-mono text-xs text-subtle-foreground">
             {personalInfo.location}
           </p>
