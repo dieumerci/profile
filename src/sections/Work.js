@@ -126,10 +126,10 @@ export default function Work() {
       <div className="section-container">
         <Reveal>
           <SectionHeading
-            index="02"
+            index="05"
             eyebrow="Selected Work"
             title="Products, not portfolio pieces."
-            subtitle="Five platforms — designed, architected, and shipped end-to-end."
+            subtitle="Nine products — designed, architected, and built end-to-end."
           />
         </Reveal>
 
