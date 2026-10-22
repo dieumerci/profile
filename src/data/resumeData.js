@@ -308,7 +308,7 @@ export const projects = [
     status: 'Product',
     badges: ['AI-Powered', 'SaaS'],
     icon: 'layers',
-    website: 'https://reklynintake.com',
+    website: 'https://reklyintake.com/',
     gradient:
       'linear-gradient(135deg, hsl(187 90% 61% / 0.20) 0%, hsl(252 92% 72% / 0.12) 100%)',
     problem:
@@ -445,17 +445,20 @@ export const projects = [
     status: 'In Development',
     badges: ['Mobile App', 'AI-Powered'],
     icon: 'sparkles',
+    website: 'https://www.ovclyn.com/en#patient-app',
     gradient:
       'linear-gradient(135deg, hsl(320 85% 70% / 0.22) 0%, hsl(252 92% 72% / 0.10) 100%)',
     problem:
       'Menstrual-health tracking apps often reward daily perfection, and the data rarely helps in the room with a clinician. People end up with logs they cannot interpret and appointments they are not prepared for.',
     solution:
-      'Ovxa is the patient-facing half of a connected care loop. It turns everyday observations into private, understandable patterns and gentle self-care goals, and helps people arrive at an appointment prepared. The patient controls what is logged and shared, and nothing in it diagnoses.',
+      'Ovxa is the patient mobile app (iOS and Android) and the patient-facing half of a connected care loop with the Ovclyn clinician workspace. It turns everyday observations into private, understandable patterns and gentle self-care goals, and helps people arrive at an appointment prepared. The patient controls what is logged and shared, and nothing in it diagnoses. Tracking is free, with fertility, pregnancy, and long-history features in a paid Ovxa Plus tier, and the app ships in ten languages.',
     features: [
       'Cycle, symptom, mood, pain, sleep, medication, and lifestyle logging, including conversational entry with a review-and-confirm step',
       'Confidence-aware period estimates and explainable multi-cycle trend summaries',
       'Optional weekly challenges and private progression, never public or competitive',
       'Patient-built clinician report with a symptom timeline, questions, and PDF export',
+      'Share a fixed, previewed snapshot with a practice that uses Ovclyn, scoped to one clinician and a time window, and see the clinician’s care plan back in the app',
+      'Revoke a share at any time, and see who opened a shared report and when',
       'Appointment requests, reminders, and secure messaging within a consented care relationship',
       'Privacy by default: sharing, AI processing, and notifications are explicit opt-ins',
     ],
@@ -468,23 +471,24 @@ export const projects = [
     name: 'Ovclyn',
     slug: 'ovclyn',
     category: 'HealthTech · Clinician Portal',
-    tagline: 'A calm, consent-led workspace for more informed care.',
+    tagline: 'Start with what your patient chooses to share.',
     status: 'In Development',
     badges: ['Web App', 'AI-Assisted'],
     icon: 'briefcase',
+    website: 'https://www.ovclyn.com/en',
     gradient:
       'linear-gradient(135deg, hsl(187 90% 61% / 0.20) 0%, hsl(320 85% 70% / 0.10) 100%)',
     problem:
       'Clinicians get patient history in fragments, with little time to prepare. Patient health data is also highly sensitive, so a clinician should see only what the patient has agreed to share, and nothing more.',
     solution:
-      'Ovclyn is the clinician web portal for Ovxa. Verified clinicians, nurses, receptionists, and practice administrators prepare, consult, document, and follow up inside a consent-led workspace, seeing only the scope their role and the patient’s consent allow. AI drafts summaries and notes for the clinician to review, and the clinician stays in charge.',
+      'Ovclyn is the clinician web workspace for Ovxa, the patient mobile app. A patient logs privately in Ovxa, then shares a fixed, previewed snapshot scoped to one clinician and a time window. In Ovclyn, clinicians, nurses, receptionists, and practice administrators consult, sign notes, and publish a plan the patient sees back in the app, seeing only what their role and the patient’s consent allow. AI drafts notes for the clinician to review, and the clinician stays in charge.',
     features: [
+      'Consent ledger: clinicians see only the snapshot a patient chose to share, for the time window they chose',
+      'Encounter notes with AI drafts that the clinician reviews and signs',
+      'Care plans that appear back in the patient’s Ovxa app, plus secure messaging',
       'Availability management, an appointment calendar, and a patient chart',
-      'AI-drafted visit summaries and notes that a clinician reviews before anything is saved',
-      'Care plans, follow-up tasks, and clinician-approved PDF reports',
-      'Role-based access for clinicians, nurses, receptionists, and administrators',
-      'Consent-scoped data: no access outside an active care relationship',
-      'Audit trails, and no patient-style gamification in the clinical workspace',
+      'Role-based access for clinicians, nurses, receptionists, and administrators, with two-step sign-in',
+      'Audit logging on every view, and billing per practice rather than per patient',
     ],
     role: 'Product builder — architecture, Next.js portal, role and consent model, and the shared Supabase backend.',
     tech: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'AI/LLM APIs'],
